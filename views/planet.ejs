@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('partials/head.ejs') %>
+  <meta charset="utf-8">
+  <title>Solar System</title>
+</head>
+<body>
+    <h1>The Solar System</h1>
+     <nav><a href="/"> Home </a> 
+         <a href="/planet?planetName=Mercury"> Mercury </a>
+        <a href="/planet?planetName=Venus"> Venus </a>
+         <a href="/planet?planetName=Earth"> Earth </a>
+         <a href="/planet?planetName=Mars"> Mars </a>
+         <a href="/planet?planetName=Jupiter"> Jupiter </a>
+         <a href="/planet?planetName=Saturn"> Saturn </a>
+         <a href="/planet?planetName=Uranus"> Uranus </a>
+         <a href="/planet?planetName=Neptune"> Neptune </a>
+         <a href="/nasa"> NASA </a>
+    </nav>
+    <h2>Planet <%= planetName %></h2>
+    <img src="<%= planetInfo.image %>">
+    <h3>Planet Info</h3>
+    <% for (let property in planetInfo) { %>
+      <% if (property !=="image") { %>
+        <p>
+          <strong><%= property %></strong>
+          <%= planetInfo[property] %>
+        </p>
+     <% } %>
+    <% } %>
+
+    <footer>
+        <%- include('partials/head.ejs') %>
+            <p>&copy; 2026 Linda Nguyen. All rights reserved.</p>
+            <p>This site is for academic purposes only.</p>
+            <p>CST 336 Internet Programming.</p>
+            <figure>
+                <img src="/img/csumblogo.jpg" alt="CSUMB Logo">
+            </figure>
+        </footer>
+</body>
+</html>

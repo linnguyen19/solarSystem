@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('partials/head.ejs') %>
+  <meta charset="utf-8">
+  <title>NASA Photo of the Day</title>
+</head>
+<body>
+    <h1>The Solar System</h1>
+     <nav><a href="/"> Home </a> 
+         <a href="/planet?planetName=Mercury"> Mercury </a>
+        <a href="/planet?planetName=Venus"> Venus </a>
+         <a href="/planet?planetName=Earth"> Earth </a>
+         <a href="/planet?planetName=Mars"> Mars </a>
+         <a href="/planet?planetName=Jupiter"> Jupiter </a>
+         <a href="/planet?planetName=Saturn"> Saturn </a>
+         <a href="/planet?planetName=Uranus"> Uranus </a>
+         <a href="/planet?planetName=Neptune"> Neptune </a>
+         <a href="/nasa"> NASA </a>
+    </nav>
+    <h2>NASA Photo of the Day</h2>
+    <h3><%= nasaInfo.title %></h3>
+    <p> Date: <%= nasaInfo.date %> </p>
+    <% if (nasaInfo.media_type ==="image") { %>
+        <img src="<%= nasaInfo.url %>">
+      <% } 
+     <h3> Description</h3>
+     <p><%= nasaInfo.explanation %></p>
+
+    <footer>
+        <%- include('partials/head.ejs') %>
+            <p>&copy; 2026 Linda Nguyen. All rights reserved.</p>
+            <p>This site is for academic purposes only.</p>
+            <p>CST 336 Internet Programming.</p>
+            <figure>
+                <img src="/img/csumblogo.jpg" alt="CSUMB Logo">
+            </figure>
+        </footer>
+</body>
+</html>
